@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inputValue">
+    
+    <ul id="ulList">
+ <li>Apple</li>
+    <li>Banana</li>
+    <li>Orange</li>
+    <li>Grapes</li>
+    <li>Mango</li>
+    </ul>
+    <script>
+
+const inputValue = document.getElementById("inputValue");
+const ulList = document.getElementById("ulList");
+
+inputValue.addEventListener('input' , (e) => {
+   const result =e.target.value.toLowerCase();
+
+   
+    const currentLiList = ulList.querySelectorAll("li");
+  
+  currentLiList.forEach((item )=> {
+    
+    const itemList = item.innerText.toLowerCase();
+
+    if(itemList.includes(result) ){
+        item.style.display = ""; // Default display (visible)
+    }else{
+        item.style.display = "none";
+    }
+  });
+
+});
+
+
+    </script>
+</body>
+</html>
+
